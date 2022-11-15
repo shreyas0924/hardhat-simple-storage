@@ -21,7 +21,10 @@ const main = async () => {
   console.log(`Current value is ${currentValue}`)
 
   //Update the current value
-  
+  const transactionResponse = await simpleStorage.store(7)
+  await transactionResponse.wait(1)
+  const updatedValue = await simpleStorage.retrive()
+  console.log(`Updated value is ${updatedValue}`)
 }
 
 async function verify(contractAddrss, args) {
