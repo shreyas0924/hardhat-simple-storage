@@ -11,7 +11,7 @@ const main = async () => {
   const simpleStorage = await SimpleStorageFactory.deploy()
   await simpleStorage.deployed()
   console.log(`Deployed contract to ${simpleStorage.address}`)
-  
+
   //}
 
   //Verfiy{
@@ -30,7 +30,6 @@ const main = async () => {
   const updatedValue = await simpleStorage.retrieve()
   console.log(`Updated value is ${updatedValue}`)
 }
-
 
 //verify functioon
 async function verify(contractAddrss, args) {
