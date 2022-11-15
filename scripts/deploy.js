@@ -14,8 +14,14 @@ const main = async () => {
 
   if (network.config.chainId === 5 && process.env.ETHERSCAN_API_KEY) {
     await simpleStorage.deployTransaction.wait(6) // wait for 6 blocks then run the verification process
-    await verify(simpleStorage.address , []) // empty arguments
+    await verify(simpleStorage.address, []) // empty arguments
   }
+
+  const currentValue = await simpleStorage.retrive()
+  console.log(`Current value is ${currentValue}`)
+
+  //Update the current value
+  
 }
 
 async function verify(contractAddrss, args) {
